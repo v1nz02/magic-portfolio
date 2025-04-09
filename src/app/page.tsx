@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from "@/once-ui/components";
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column, Carousel } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
 
 import { baseURL, routes } from "@/app/resources";
@@ -97,6 +97,13 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+      <RevealFx translateY="16" delay={0.6}>
+      <Carousel 
+        sizes="(max-width: 960px) 100vw, 960px"
+        images={home.Images}
+        
+      />
+      </RevealFx>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>

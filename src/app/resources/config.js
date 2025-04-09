@@ -4,24 +4,24 @@ const routes = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/blog": false,
+  "/gallery": false,
 };
 
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+  "/gallery": true,
 };
 
 const style = {
   theme: "dark", // dark | light
   neutral: "gray", // sand | gray | slate
   brand: "emerald", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  accent: "orange", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  accent: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
+  border: "rounded", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
 };
@@ -63,15 +63,15 @@ const effects = {
 };
 
 const display = {
-  location: true,
-  time: true,
+  location: false,
+  time: false,
 };
 
 const mailchimp = {
   action: "https://url/subscribe/post?parameters",
   effects: {
     mask: {
-      cursor: false,
+      cursor: true,
       x: 100,
       y: 0,
       radius: 100,

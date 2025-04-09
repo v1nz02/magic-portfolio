@@ -1,24 +1,25 @@
 import { InlineCode } from "@/once-ui/components";
+import Image from "next/image";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Vincenzo",
+  lastName: "Maniscalco",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  role: "Software Engineer",
+  avatar: "/images/avatar.jpg", // optional: Leave the string empty if you don't want to display an avatar
+  location: "Palermo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Italian", "English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      I occasionally write about design, technology, and share thoughts on the
+      intersection of creativity and engineering.
     </>
   ),
 };
@@ -26,25 +27,16 @@ const newsletter = {
 const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
-  },
+  
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "X",
-    icon: "x",
-    link: "",
+    link: "https://www.linkedin.com/in/vincenzo-maniscalco-a84a96233",
   },
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:vincenzomani02@gmail.com",
   },
 ];
 
@@ -52,18 +44,38 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Software Engineer</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      Sono Vincenzo, <InlineCode>software engineer</InlineCode> presso Sistemi
+      Informativi (IBM).
+      <br />
+      Nel tempo libero lavoro su progetti personali per esplorare nuove
+      tecnologie e migliorare le mie competenze.
     </>
   ),
+  Images: [
+    {
+      src: "/images/home/cover-01.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/home/cover-02.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/home/cover-03.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+  ],
 };
 
 const about = {
-  label: "About",
-  title: "About me",
+  label: "Profilo",
+  title: "Info",
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
     display: true,
@@ -73,77 +85,74 @@ const about = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Introduzione",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Ciao, sono Vincenzo, un ingegnere informatico con una forte passione per
+        lo sviluppo software. Attualmente lavoro presso Sistemi Informativi
+        (IBM), dove contribuisco a soluzioni enterprise per il business. Nel
+        tempo libero mi dedico a progetti personali che spaziano da applicazioni
+        mobile a gestionali personalizzati. Mi piace imparare continuamente,
+        esplorare nuove tecnologie e trasformare le idee in codice funzionale e
+        ben progettato.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Esperienze lavorative",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Sistemi Informativi (IBM)",
+        timeframe: "2025 - Presente",
+        role: "Junior Software Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Ho collaborato a diversi progetti per la pubblica amministrazione,
+            contribuendo allo sviluppo di soluzioni scalabili e performanti
+            utilizzando tecnologie come <br />
+            <InlineCode>.NET</InlineCode> <InlineCode>React</InlineCode>{" "}
+            <InlineCode>SQL Server</InlineCode>.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
-        images: [],
       },
     ],
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Studi",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Università degli Studi di Palermo",
+        description: <>Laurea Triennale in Ingegneria Informatica</>,
+        grade: "101",
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Universidade da Coruña ",
+        description: (
+          <>Esperienza di studi all'estero presso La Coruña in Spagna</>
+        ),
+      },
+      {
+        name: "IISS Arena di Sciacca",
+        description: (
+          <>Diploma di Perito tecnico industriale,Elettronica ed Automazione</>
+        ),
+        grade: "100",
       },
     ],
   },
@@ -152,35 +161,92 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: ".NET",
+        description: (
+          <>
+            Possiedo una solida esperienza in .NET, focalizzandomi
+            principalmente sulla realizzazione di API RESTful e microservizi.
+            Utilizzo ASP.NET Core ed Entity Framework per sviluppare soluzioni
+            web e servizi back-end robusti e scalabili, integrando database SQL
+            Server e adottando best practices per garantire performance,
+            sicurezza e manutenibilità.
+          </>
+        ),
         // optional: leave the array empty if you don't want to display images
         images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-02.jpg",
+          //   alt: "Project image",
+          //   width: 16,
+          //   height: 9,
+          // },
+          // {
+          //   src: "/images/projects/project-01/cover-03.jpg",
+          //   alt: "Project image",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "React",
+        description: (
+          <>
+            Ho una conoscenza intermedia di React, con esperienza nello sviluppo
+            di interfacce utente dinamiche e componenti riutilizzabili. Ho
+            lavorato su progetti in cui ho gestito lo stato in modo efficace e,
+            in un'occasione, ho utilizzato Redux per la gestione globale dello
+            stato.
+          </>
+        ),
         images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+          // Eventuali immagini relative a React
+        ],
+      },
+      {
+        title: "T-SQL",
+        description: (
+          <>
+            Mi sono occupato di sviluppare query complesse, stored procedure e
+            funzioni, garantendo performance e affidabilità nella gestione e
+            analisi dei dati.
+          </>
+        ),
+        images: [
+          // Eventuali immagini relative a React
+        ],
+      },
+      {
+        title: "Java",
+        description: (
+          <>
+            Ho acquisito solide basi in Java durante il mio percorso
+            universitario, lavorando su progetti e applicazioni che mi hanno
+            permesso di approfondire la programmazione orientata agli oggetti,
+            la gestione delle eccezioni e l'utilizzo delle collezioni. Queste
+            esperienze mi hanno fornito una solida comprensione dei principi
+            fondamentali della programmazione e mi hanno preparato ad affrontare
+            sfide complesse.
+          </>
+        ),
+        images: [
+          // Eventuali immagini relative a Java
+        ],
+      },
+      {
+        title: "C",
+        description: (
+          <>
+            Durante il percorso universitario ho utilizzato il linguaggio C per
+            sviluppare una comprensione profonda della programmazione
+            procedurale. Ho lavorato su esercizi e progetti che mi hanno
+            insegnato la gestione della memoria, l'implementazione di algoritmi
+            efficienti e l'ottimizzazione del codice. Queste esperienze mi hanno
+            fornito una solida base per la programmazione a basso livello.
+          </>
+        ),
+        images: [
+          // Eventuali immagini relative a C
         ],
       },
     ],
@@ -189,23 +255,23 @@ const about = {
 
 const blog = {
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about tech...",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
 const work = {
-  label: "Work",
-  title: "My projects",
+  label: "Lavori",
+  title: "I miei progetti",
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
 
 const gallery = {
-  label: "Gallery",
-  title: "My photo gallery",
+  label: "Galleria",
+  title: "La mia galleria",
   description: `A photo collection by ${person.name}`,
   // Images from https://pexels.com
   images: [
@@ -216,66 +282,6 @@ const gallery = {
     },
     {
       src: "/images/gallery/img-02.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-03.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-04.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-05.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-06.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-07.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-08.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-09.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-10.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-11.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-12.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-13.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-14.jpg",
       alt: "image",
       orientation: "horizontal",
     },

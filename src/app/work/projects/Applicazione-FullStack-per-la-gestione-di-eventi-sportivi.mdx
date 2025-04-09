@@ -1,0 +1,63 @@
+---
+title: "Gestionale di eventi sportivi"
+publishedAt: "2024-06-01"
+summary: "Applicazione web sviluppata come parte di un progetto accademico presso l'Università della Coruña. Il progetto si concentra sulla gestione di eventi sportivi, consentendo agli utenti di registrarsi, valutare eventi e gestire le iscrizioni.
+"
+---
+
+## Overview
+
+Applicazione web per la gestione di eventi sportivi. Permette agli utenti di cercare eventi sportivi per tipo, località e date, registrarsi come partecipanti e valutare gli eventi dopo la partecipazione. Il sistema ha diversi ruoli utente (partecipanti e dipendenti) con i dipendenti che possono consegnare i pettorali ai partecipanti. L'applicazione è costruita con un backend Java Spring Boot, frontend React e database MySQL.
+
+
+## Funzionalità Principali
+
+### Gestione Utenti
+- Registrazione e autenticazione utenti
+- Diversi ruoli utente (PARTECIPANTE, DIPENDENTE)
+- Gestione del profilo e funzionalità di cambio password
+
+### Gestione Eventi Sportivi
+- Catalogo completo di eventi sportivi con informazioni dettagliate
+- Eventi categorizzati per tipo (Corsa, Nuoto, Ciclismo, ecc.)
+- Filtraggio degli eventi per località (Provincia)
+- Funzionalità di ricerca basata sulle date
+- Paginazione per i risultati di ricerca
+
+### Sistema di Registrazione
+- I partecipanti possono registrarsi agli eventi
+- La registrazione richiede dati della carta bancaria
+- Il sistema limita il numero massimo di partecipanti
+- I dipendenti possono consegnare i pettorali ai partecipanti
+
+### Sistema di Valutazione
+- I partecipanti possono valutare gli eventi dopo la partecipazione
+- Le valutazioni medie vengono calcolate e visualizzate
+
+## Tecnologie Utilizzate
+
+### Frontend
+- **Linguaggio**: JavaScript
+- **Framework**: React
+- **Librerie**:
+  - `react-intl` per la gestione della localizzazione
+  - `redux` per la gestione dello stato globale
+  - `bootstrap` per il design responsivo
+- **Strumenti di sviluppo**:
+  - Vite per il bundling e il server di sviluppo
+  - ESLint per il linting del codice
+
+### Backend
+- **Linguaggio**: Java
+- **Framework**: Spring Boot
+- **Persistenza**: JPA con Hibernate
+- **Database**: PostgreSQL
+- **Validazione**: Jakarta Validation
+- **Build Tool**: Maven
+
+  ## Localizzazione
+
+Il progetto supporta tre lingue:
+- **Inglese** (default)
+- **Spagnolo**
+- **Galiziano**

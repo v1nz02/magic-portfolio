@@ -271,25 +271,41 @@ export default function About() {
             </>
           )}
 
-          {about.studies.display && (
+            {about.studies.display && (
             <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
-                {about.studies.title}
+              <Heading
+              as="h2"
+              id={about.studies.title}
+              variant="display-strong-s"
+              marginBottom="m"
+              >
+              {about.studies.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text id={institution.name} variant="heading-strong-l">
-                      {institution.name}
+              {about.studies.institutions.map((institution, index) => (
+                <Column key={`${institution.name}-${index}`} fillWidth gap="4">
+                <Flex fillWidth horizontal="space-between" vertical="center">
+                  <Text id={institution.name} variant="heading-strong-l">
+                  {institution.name}
+                  </Text>
+                  {institution.grade &&(
+                    <Text variant="heading-strong-xl">
+                    <Icon
+                      name="book"
+                      style={{ verticalAlign: "middle", marginRight: "4px" }}
+                    />
+                    {institution.grade}
                     </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
-                      {institution.description}
-                    </Text>
-                  </Column>
-                ))}
+                  )}
+                </Flex>
+                <Text variant="heading-default-xs" onBackground="neutral-weak">
+                  {institution.description}
+                </Text>
+                </Column>
+              ))}
               </Column>
             </>
-          )}
+            )}
 
           {about.technical.display && (
             <>
